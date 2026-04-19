@@ -66,3 +66,10 @@ toggleBtn.addEventListener("click", () => {
 if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark");
 }
+window.onscroll = () => {
+    let scrollTop = document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let scrolled = (scrollTop / height) * 100;
+
+    document.getElementById("progressBar").style.width = scrolled + "%";
+};
